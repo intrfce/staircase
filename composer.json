@@ -1,7 +1,7 @@
 {
     "name": "intrfce/staircase",
     "description": "A release manager for Laravel",
-    "type": "library",
+    "keywords": ["laravel", "releases"],
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -14,15 +14,32 @@
             "email": "dan@danmatthews.me"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+          "laravel": {
+            "providers": [
+                "Intrfce\\Staircase\\Providers\\StaircaseServiceProvider"
+            ]
+        }
+    },
     "require": {
         "php": "^8.1",
         "ext-json": "*",
         "ext-pcntl": "*",
-        
         "illuminate/contracts": "^9.21|^10.0|^11.0|^12.0",
         "illuminate/queue": "^9.21|^10.0|^11.0|^12.0",
         "illuminate/support": "^9.21|^10.0|^11.0|^12.0",
-        "nesbot/carbon": "^2.17|^3.0"
+        "nesbot/carbon": "^2.17|^3.0",
+        "composer/semver": "^3.4"
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.7",
+        "tightenco/duster": "^3.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }
